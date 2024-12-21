@@ -25,7 +25,7 @@ namespace CleanArch.Domain.Entities
 
         public Product(int id, string name, string description, decimal price, int stock, string image)
         {
-            DomainExceptionValidation.When(Id < 0, "Id inválido");
+            DomainExceptionValidation.When(id < 0, "Id inválido.");
             Id = id;
 
             ValidateDomain(name, description, price, stock, image);
@@ -45,7 +45,7 @@ namespace CleanArch.Domain.Entities
 
             DomainExceptionValidation.When(string.IsNullOrEmpty(description), "Descrição inválida.");
             DomainExceptionValidation.When(description.Length < 5, "Tamanho inválido. A descrição deve ter no mínimo 5 caracteres.");
-            DomainExceptionValidation.When(name.Length > 300, "Tamanho inválido. A descrição do produto deve ter no máximo 300 caracteres.");
+            DomainExceptionValidation.When(description.Length > 300, "Tamanho inválido. A descrição do produto deve ter no máximo 300 caracteres.");
 
             DomainExceptionValidation.When(price <= 0, "Preço inválido.");
 

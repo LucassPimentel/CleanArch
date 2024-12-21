@@ -39,6 +39,8 @@ namespace CleanArch.Domain.Entities
 
             DomainExceptionValidation.When(name.Length < 3, "Tamanho inválido. A categoria deve ter no mínimo 3 caracteres.");
 
+            DomainExceptionValidation.When(name.Length > 100, "Tamanho inválido. O nome do produto deve ter no máximo 100 caracteres.");
+
             Name = name;
         }
 
